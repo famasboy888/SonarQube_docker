@@ -18,3 +18,57 @@ Add the following:
 vm.max_map_count=262144
 fs.file-max=65536
 ```
+
+Apply changes:
+```bash
+sudo sysctl -p
+```
+
+## 2) Install `docker` and `docker-compose`
+
+_Note: I am using Debian distro_
+
+```bash
+sudo apt update
+sudo apt install docker.io docker-compose -y
+```
+
+## 3) Create a docker compose YAML file
+
+sonarqube-compose.yaml
+
+```yaml
+version: "3"
+services:
+  sonarqube:
+    image: sonarqube:community
+    restart: unless-stopped
+    depends_on:
+      - db
+    environment:
+      SONAR_JDBC_URL: jdbc:postgresql://db:5432/sonar
+      SONAR_JDBC_USERNAME: sonar
+      SONAR_JDBC_PASSWORD: sonar
+    volumes:
+      - sonarqube_data:/opt/sonarqube/data
+      - sonarqube_extensions:/opt/sonarqube/extensions
+      - sonarqube_logs:/opt/sonarqube/logs
+    ports:
+      - "9000:9000"
+  db:
+    image: postgres:12
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: sonar
+      POSTGRES_PASSWORD: sonar
+    volumes:
+      - postgresql:/var/lib/postgresql
+      - postgresql_data:/var/lib/postgresql/data
+volumes:
+  sonarqube_data:
+  sonarqube_extensions:
+  sonarqube_logs:
+  postgresql:
+  postgresql_data:
+```
+
