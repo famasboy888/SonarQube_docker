@@ -9,6 +9,9 @@ SonarQube architecture from [Official Installation](https://docs.sonarsource.com
 ## 1) Pre-requisite for successful deployment
 
 Edit `/etc/sysctl.conf`
+```bash
+sudo nano /etc/sysctl.conf
+```
 
 Add the following:
 ```bash
