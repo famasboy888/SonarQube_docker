@@ -115,3 +115,11 @@ sonarqube_1  | 2024.04.25 01:46:55 INFO  ce[][o.s.ce.app.CeServer] Compute Engin
 sonarqube_1  | 2024.04.25 01:46:55 INFO  app[][o.s.a.SchedulerImpl] Process[ce] is up
 sonarqube_1  | 2024.04.25 01:46:55 INFO  app[][o.s.a.SchedulerImpl] SonarQube is operational
 ```
+
+## 5) Access from browser
+
+Access `http://server-ip:9000`
+
+<p align="center">
+  <img width="80%" height="80%" src="https://github.com/famasboy888/SonarQube_docker/assets/23441168/89d7ad56-9cce-4a18-baa4-125dc62da869">
+</p>
