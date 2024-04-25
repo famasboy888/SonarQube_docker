@@ -85,3 +85,33 @@ volumes:
 ```bash
 docker-compose -f sonarqube-compose.yaml up -d
 ```
+
+Wait for it to finish pulling and downloading images
+
+<p align="center">
+  <img width="40%" height="40%" src="https://github.com/famasboy888/SonarQube_docker/assets/23441168/e6bc3549-e04a-4ed8-8181-ad5e1872e71e">
+</p>
+
+Watch live logs
+```bash
+docker-compose -f sonarqube-compose.yaml logs --follow
+```
+
+```bash
+Output:
+
+sonarqube_1  | 2024.04.25 01:46:50 WARN  app[][startup] ####################################################################################################################
+sonarqube_1  | 2024.04.25 01:46:50 WARN  app[][startup] Default Administrator credentials are still being used. Make sure to change the password or deactivate the account.
+sonarqube_1  | 2024.04.25 01:46:50 WARN  app[][startup] ####################################################################################################################
+sonarqube_1  | 2024.04.25 01:46:50 INFO  web[][o.s.s.p.Platform] Web Server is operational
+sonarqube_1  | 2024.04.25 01:46:50 INFO  ce[][o.s.d.DefaultDatabase] Create JDBC data source for jdbc:postgresql://db:5432/sonar
+sonarqube_1  | 2024.04.25 01:46:50 INFO  ce[][c.z.h.HikariDataSource] HikariPool-1 - Starting...
+sonarqube_1  | 2024.04.25 01:46:50 INFO  ce[][c.z.h.p.HikariPool] HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@25f735a5
+sonarqube_1  | 2024.04.25 01:46:50 INFO  ce[][c.z.h.HikariDataSource] HikariPool-1 - Start completed.
+sonarqube_1  | 2024.04.25 01:46:52 INFO  ce[][o.s.s.p.ServerFileSystemImpl] SonarQube home: /opt/sonarqube
+sonarqube_1  | 2024.04.25 01:46:52 INFO  ce[][o.s.c.c.CePluginRepository] Load plugins
+sonarqube_1  | 2024.04.25 01:46:55 INFO  ce[][o.s.c.c.ComputeEngineContainerImpl] Running Community edition
+sonarqube_1  | 2024.04.25 01:46:55 INFO  ce[][o.s.ce.app.CeServer] Compute Engine is started
+sonarqube_1  | 2024.04.25 01:46:55 INFO  app[][o.s.a.SchedulerImpl] Process[ce] is up
+sonarqube_1  | 2024.04.25 01:46:55 INFO  app[][o.s.a.SchedulerImpl] SonarQube is operational
+```
