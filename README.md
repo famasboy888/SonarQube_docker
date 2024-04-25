@@ -1,5 +1,9 @@
 # SonarQube server deployed on Docker
 
+<p align="center">
+  <img width="50%" height="50%" src="https://github.com/famasboy888/SonarQube_docker/assets/23441168/27d8ec64-9973-48d8-be6c-520bd53f4c03">
+</p>
+
 SonarQube architecture from [Official Installation](https://docs.sonarsource.com/sonarqube/latest/setup-and-upgrade/install-the-server/introduction/)
 
 <p align="center">
