@@ -33,6 +33,12 @@ sudo apt update
 sudo apt install docker.io docker-compose -y
 ```
 
+Changing permmission to execute docker as non-root
+
+```bash
+sudo chmod 666 /var/run/docker.sock
+```
+
 ## 3) Create a docker compose YAML file
 
 _Note: Remove comment explainations_
@@ -74,3 +80,8 @@ volumes:
   postgresql_data:
 ```
 
+## 4) Run docker compose file
+
+```bash
+docker-compose -f sonarqube-compose.yaml up -d
+```
