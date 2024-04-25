@@ -120,6 +120,10 @@ sonarqube_1  | 2024.04.25 01:46:55 INFO  app[][o.s.a.SchedulerImpl] SonarQube is
 
 Access `http://server-ip:9000`
 
+default username: `admin`
+
+default password: `admin`
+
 <p align="center">
   <img width="80%" height="80%" src="https://github.com/famasboy888/SonarQube_docker/assets/23441168/89d7ad56-9cce-4a18-baa4-125dc62da869">
 </p>
