@@ -35,28 +35,30 @@ sudo apt install docker.io docker-compose -y
 
 ## 3) Create a docker compose YAML file
 
+_Note: Remove comment explainations_
+
 sonarqube-compose.yaml
 
 ```yaml
 version: "3"
 services:
   sonarqube:
-    image: sonarqube:community
+    image: sonarqube:community                                  #We pull community image from Dockerhub
     restart: unless-stopped
-    depends_on:
+    depends_on:                                                 #We specify that it is dependent on another service called 'db'
       - db
     environment:
-      SONAR_JDBC_URL: jdbc:postgresql://db:5432/sonar
+      SONAR_JDBC_URL: jdbc:postgresql://db:5432/sonar           #Specify required env variables. PostgreSQL works at port 5432
       SONAR_JDBC_USERNAME: sonar
       SONAR_JDBC_PASSWORD: sonar
     volumes:
-      - sonarqube_data:/opt/sonarqube/data
+      - sonarqube_data:/opt/sonarqube/data                      #Specify local volume stored
       - sonarqube_extensions:/opt/sonarqube/extensions
       - sonarqube_logs:/opt/sonarqube/logs
-    ports:
+    ports:                                                      #Specify 9000 as running port for SonarQube
       - "9000:9000"
   db:
-    image: postgres:12
+    image: postgres:12                                          #Image is pulling version 12
     restart: unless-stopped
     environment:
       POSTGRES_USER: sonar
